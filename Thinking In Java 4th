@@ -1,0 +1,26 @@
+1....\Thinking_in_Java_Fourth_Edition_Code\build.xml:59: J2SE5 required
+解决办法：
+  <condition property="version1.5">
+    <equals arg1="1.5" arg2="${ant.java.version}"/>
+  </condition>
+  修改为：（由于使用的是1.8）
+  <condition property="version1.8">
+    <equals arg1="1.8" arg2="${ant.java.version}"/>
+  </condition>	
+ 
+  <fail message="J2SE5 required" unless="version1.5"/>  
+  修改为：
+  <fail message="J2SE8 required" unless="version1.7"/>  	
+ 
+2. ...\Thinking_in_Java_Fourth_Edition_Code\net\build.xml:45:
+You must install the Javassist library from http://sourceforge.net/projects/jboss/
+解决办法：将javassist-3.12.0.GA.jar拷贝到目录...\jdk1.7.0_45\jre\lib\ext
+ 
+3. ...\Thinking_in_Java_Fourth_Edition_Code\xml\build.xml:34: You must install the XOM library from http://www.xom.nu	
+解决办法：将xom-1.2.10.jar拷贝到目录...\jdk1.7.0_45\jre\lib\ext	
+ 
+4. ...\Thinking_in_Java_Fourth_Edition_Code\gui\build.xml:45: You must have javaws.jar in your classpath
+解决办法：设置环境变量CLASSPATH 添加路径...\jdk1.7.0_45\jre\lib\javaws.jar，重启cmd
+ 
+5. ...\Thinking_in_Java_Fourth_Edition_Code\swt\build.xml:45: You must install the SWT library from http://www.eclipse.org
+解决办法：将swt.jar拷贝到目录....\jdk1.7.0_45\jre\lib\ext
