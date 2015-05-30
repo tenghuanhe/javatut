@@ -1,0 +1,2 @@
+如果在编译的时候出现“类LogFilter是公共的，应该在名为LogFilter,java的文件中声明为public class LogFilter implements Filter{”
+那是因为类名和件名不一致造成的，拼写错误快改正。
